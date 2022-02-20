@@ -25,12 +25,6 @@ jobs:
           make
           make seq OPTIONS=SPARSE
           make mpi OPTIONS=SPARSE
-#      - uses: actions/cache@v2
-#        with:
-#          path: ~/.cache/pip
-#          key: ${{ runner.os }}-${{ env.pythonLocation }}-pip-${{ hashFiles('**/setup.py') }}
-#          restore-keys: |
-#            ${{ runner.os }}-${{ env.pythonLocation }}-pip-
       - name: Run tests
         run: |
           cd tests/2exec
