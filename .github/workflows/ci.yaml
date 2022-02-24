@@ -19,13 +19,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install gcc gfortran libfftw3-dev libopenmpi-dev ocl-icd-opencl-dev libclfft-dev
-      - name: Compile ADDA
+      - name: Compile ADDA with `seq`
         run: |
-          cd src
-          make
-          make seq OPTIONS=SPARSE
-          make mpi OPTIONS=SPARSE
-      - name: Run tests
+          cd src/
+          make seq
+      - name: Run `seq` tests
         run: |
           cd tests/2exec
-          ./test_all cross all
+          ./comp2exec seq
